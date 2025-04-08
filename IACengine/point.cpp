@@ -1,0 +1,14 @@
+
+#pragma once
+
+#include "point.h"
+#include "primitives.h"
+
+/////////////////////////////////////////////////////////////////
+// point.cpp - Main implementation of the Point class
+/////////////////////////////////////////////////////////////////
+
+Point::Point(Vector3 position)
+{
+    this->position = position;
+}

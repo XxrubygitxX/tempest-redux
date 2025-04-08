@@ -1,0 +1,18 @@
+#pragma once
+
+#include "inengineconstants.h"
+
+///////////////////////////////////////////////////////////////////////////
+// transformations.h - Main definition of transformations namespace
+//
+// Includes quaternion transformations, projection functions and more.
+///////////////////////////////////////////////////////////////////////////
+
+namespace Transformations
+{
+
+    
+
+
+
+}
