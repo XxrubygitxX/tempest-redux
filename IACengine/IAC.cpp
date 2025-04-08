@@ -1,5 +1,6 @@
 
 
+
 #include "IAC.h"
 #include <iostream>
 #include <SDL2/SDL.h>
@@ -21,7 +22,7 @@ IAC::IAC(uint32_t width,
 
 IAC::~IAC()
 {
-    cleanup(); // Ensure the destructor is defined only once
+    this->quit();
 }
 
 bool IAC::Initialize()
@@ -50,14 +51,16 @@ bool IAC::Initialize()
         return false;
     }
 
+    this->pixels = new uint32_t[this->width * this->height];
+
+    
+
     return true;
 }
 
 void IAC::start()
 {
-    running = true;
-
-    this->setup();
+    this->running = true;
 
     while (running)
     {
@@ -70,7 +73,8 @@ void IAC::start()
 
 void IAC::quit()
 {
-    running = false;
+    this->running = false;
+    cleanup();
 }
 
 void IAC::process_input()
@@ -96,6 +100,9 @@ void IAC::render()
 }
 void IAC::cleanup()
 {
+
+    delete[] this->pixels;
+
     if (renderer)
     {
         SDL_DestroyRenderer(renderer);
@@ -108,3 +115,4 @@ void IAC::cleanup()
     }
     SDL_Quit();
 }
+

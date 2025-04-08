@@ -1,15 +1,9 @@
 
 #include <iostream>
 #include "IACengine/IAC.cpp"
-
-///////////////////////////////////////////////////////////////////
-// Our setup function (ran once)
-///////////////////////////////////////////////////////////////////
-
-void IAC::setup()
-{
-    
-}
+#include "IACengine/point.h"
+#include "IACengine/primitives.h"
+#include "IACengine/scene.h"
 
 
 ///////////////////////////////////////////////////////////////////
@@ -25,12 +19,17 @@ int main(int argc, char* argv[])
 
 {
 
-    IAC* engine = new IAC(800, 600, "IAC");
+    
+    
+    IAC* engine = new IAC(800, 600);
 
     if (engine->Initialize())
     {
         engine->start();
     }
+
+    delete engine;
+    engine = nullptr;
 
     return 0;
 

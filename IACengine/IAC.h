@@ -1,7 +1,6 @@
 
-
-
 #pragma once
+
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
@@ -9,6 +8,7 @@
 #include <SDL2/SDL_mixer.h>
 #include <iostream>
 #include <cstdint>
+#include "scene.h"
 
 
 class IAC
@@ -23,13 +23,15 @@ class IAC
         void start();  // Start the main loop
         void quit();  // Clean up SDL and quit
         void update();
-        void setup();
+
+        void ClearScreen();
     
     private:
     
         SDL_Window* window;
         SDL_Renderer* renderer;
         const char* title;
+        Scene* current_scene;
 
         uint32_t* pixels;
 
